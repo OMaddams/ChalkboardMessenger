@@ -1,4 +1,12 @@
 ﻿@page
 @model ChalkboardMessenger.UI.Pages.Member.IndexModel
+@if (HttpContext.User.Identity.Name != null)
+{
+    ViewData["CurrentUser"] = HttpContext.User.Identity.Name;
+}
+else
+{
+    ViewData["CurrentUser"] = string.Empty;
+}
 @{
 }

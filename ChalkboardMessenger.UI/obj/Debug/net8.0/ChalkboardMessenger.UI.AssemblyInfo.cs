@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChalkboardMessenger.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e9037578c658b14543e11c53276e5428bbbde8f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d83bc4dbe09dca6aba7b948bc800350f11b7e98e")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChalkboardMessenger.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChalkboardMessenger.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

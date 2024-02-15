@@ -49,5 +49,7 @@ namespace ChalkboardMessenger.UI.Pages.Account
             return Page();
             //signInManager.UserManager.GetUserAsync(HttpContext.User)
         }
+
+
     }
 }

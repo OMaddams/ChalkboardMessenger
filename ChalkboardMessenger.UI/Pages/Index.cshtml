@@ -2,9 +2,23 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    @if (HttpContext.User.Identity.Name != null)
+    {
+        ViewData["CurrentUser"] = HttpContext.User.Identity.Name;
+    }
+    else
+    {
+        ViewData["CurrentUser"] = string.Empty;
+    }
+
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center d-flex flex-column justify-content-center" style="min-height:85vh">
+    <div class="d-flex flex-column align-items-center justify-content-md-center" style="min-height:100%;">
+    <h1 class="m-2"> Welcome to the messageboard!</h1>
+    
+        <a class="btn btn-primary w-25 m-2" asp-page="Member/Index"><h4>Take me to the messages!</h4></a>
+        <a class="btn btn-primary w-25 m-2" asp-page="Account/Register"><h4>Register</h4></a>
+    </div>
+    
 </div>

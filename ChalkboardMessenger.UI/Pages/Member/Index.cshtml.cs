@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ChalkboardMessenger.UI.Pages.Member
@@ -8,5 +7,7 @@ namespace ChalkboardMessenger.UI.Pages.Member
         public void OnGet()
         {
         }
+
+
     }
 }

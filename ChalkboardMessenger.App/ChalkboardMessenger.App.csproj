@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="microsoft.aspnetcore.identity" Version="2.2.0" />
     <PackageReference Include="microsoft.aspnetcore.identity.entityframeworkcore" Version="8.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
     <PackageReference Include="microsoft.entityframeworkcore" Version="8.0.2" />
     <PackageReference Include="microsoft.entityframeworkcore.design" Version="8.0.2">
       <PrivateAssets>all</PrivateAssets>

@@ -18,9 +18,25 @@ namespace ChalkboardMessenger.UI.Pages.Account
         public void OnGet()
         {
         }
-        public void OnPost()
+        public async Task<IActionResult> OnPost()
         {
+            if (Username != null && Password != null)
+            {
+                IdentityUser? userToSignIn = await signInManager.UserManager.FindByNameAsync(Username);
 
+                if (userToSignIn != null)
+                {
+                    var signInResult = await signInManager.PasswordSignInAsync(userToSignIn, Password, false, false);
+
+                    if (signInResult.Succeeded)
+                    {
+                        return RedirectToPage("/Member/Index");
+                    }
+                }
+            }
+
+            return Page();
         }
+
     }
 }
