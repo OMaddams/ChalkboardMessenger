@@ -1,6 +1,12 @@
-﻿namespace ChalkboardMessenger.Data.Database
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace ChalkboardMessenger.Data.Database
 {
-    internal class MessagesDbContext
+    public class MessagesDbContext : DbContext
     {
+        public MessagesDbContext(DbContextOptions<MessagesDbContext> options) : base(options)
+        {
+
+        }
     }
 }
