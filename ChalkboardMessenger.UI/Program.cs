@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages(options => options.Conventions.AuthorizeFolder("/Member"));
 
 var authConnectionString = builder.Configuration.GetConnectionString("AuthConnection");
 var messagesConnectionString = builder.Configuration.GetConnectionString("MessagesConnection");
@@ -32,6 +32,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();

@@ -2,3 +2,10 @@
 @model ChalkboardMessenger.UI.Pages.Account.LoginModel
 @{
 }
+
+    <form method="post">
+        <input type="text" asp-for="Username"/>
+        <input type="password" asp-for="Password"/>
+        <button>Login</button>
+
+    </form>
