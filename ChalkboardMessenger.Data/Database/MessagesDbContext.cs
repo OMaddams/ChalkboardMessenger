@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ChalkboardMessenger.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ChalkboardMessenger.Data.Database
 {
@@ -8,5 +9,6 @@ namespace ChalkboardMessenger.Data.Database
         {
 
         }
+        DbSet<MessageModel> Messages { get; set; }
     }
 }
