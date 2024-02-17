@@ -14,6 +14,7 @@ namespace ChalkboardMessenger.UI.Pages.Account
             this.signInManager = signInManager;
         }
         public string Username { get; set; }
+        public string PasswordRepeat { get; set; }
         public string Password { get; set; }
         public void OnGet()
         {

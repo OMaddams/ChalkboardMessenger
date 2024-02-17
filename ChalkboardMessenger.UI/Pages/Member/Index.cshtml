@@ -1,12 +1,55 @@
 ﻿@page
 @model ChalkboardMessenger.UI.Pages.Member.IndexModel
-@if (HttpContext.User.Identity.Name != null)
-{
-    ViewData["CurrentUser"] = HttpContext.User.Identity.Name;
-}
-else
-{
-    ViewData["CurrentUser"] = string.Empty;
-}
+
 @{
 }
+
+<div class="row w-100 justify-content-center align-items-center" >
+    <div class="col-6">
+        <form method="post" class="card mx-4 ">
+            <label class="card-header text-center"><h4>Write your message</h4></label>
+            <textarea class="p-2" rows="4" cols="50" style="resize:none;" asp-for="Message"></textarea>
+            <div class="card-footer p-0">
+                <button class="btn btn-primary w-100"><h5>Submit</h5></button>
+            </div >
+            @if (Model.Error != null)
+            {
+                <p class="bg-danger text-white card-footer m-0 text-center">@Model.Error
+                </p>
+            }
+        </form>
+        
+    </div>
+    
+    <div style="width:100%"></div>
+    @foreach(var item in Model.Messages)
+    {
+        <div class="d-flex  flex-column col-6 ">
+            <div class="mx-4 my-4 card ">
+                <div class="card-header d-flex justify-content-between text-center @(item.UserName == User.Identity.Name ? "bg-success text-white" : "")">
+                    <h4 class="d-inline">Poster: @(@item.UserName == User.Identity.Name ? "You" : item.UserName)</h4>   
+                    <form class="justify-content-end d-flex" asp-page-handler="remove" method="post">
+                        <input type="hidden" name="cardId" value="@item.Id" />
+                        @if (item.UserName == User.Identity.Name)
+                        {
+                            <button class="btn btn-danger">X</button>
+                        }
+                    </form>
+                </div>
+
+                <div class="card-body">
+                    <h5 class="text-center">@item.Message</h5>
+                </div>
+                <div class="card-footer ">
+                    
+                    <h4 class="d-inline float-end">Posted: @item.Date.ToLocalTime() </h4>
+                </div>
+
+            </div>
+
+        </div>
+        <div style="width:100%"></div>
+    }
+    
+
+</div>  
