@@ -21,6 +21,11 @@ namespace ChalkboardMessenger.UI.Pages.Account
         }
         public async Task<IActionResult> OnPost()
         {
+            if (Username.ToUpper() == "ADMIN")
+            {
+                return Page();
+            }
+
             IdentityUser newUser = new()
             {
                 UserName = Username,

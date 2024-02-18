@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChalkboardMessenger.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b08f19a52554ae00c38b1977969d34c734a55428")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36cb5b64c39cce1c5cb341d098fd55476ec04067")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChalkboardMessenger.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChalkboardMessenger.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

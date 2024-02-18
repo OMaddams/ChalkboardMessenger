@@ -34,6 +34,11 @@ namespace ChalkboardMessenger.Data.Repo
             await SaveChanges();
             return modelToAdd;
         }
+
+        public async Task UpdateUsername(string oldUsername, string newUsername)
+        {
+            await context.Messages.Where(m => m.UserName == oldUsername).ForEachAsync(m => m.UserName = newUsername);
+        }
         public async Task<string> Remove(int id)
         {
             MessageModel? modelToRemove = await GetAsync(id);

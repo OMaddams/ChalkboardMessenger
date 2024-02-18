@@ -8,14 +8,16 @@ namespace ChalkboardMessenger.UI.Pages
     public class logoutModel : PageModel
     {
         private readonly SignInManager<IdentityUser> signInManager;
+        private readonly UserManager userManager;
 
-        public logoutModel(SignInManager<IdentityUser> signInManager)
+        public logoutModel(SignInManager<IdentityUser> signInManager, UserManager userManager)
         {
             this.signInManager = signInManager;
+            this.userManager = userManager;
         }
         public async Task<IActionResult> OnGet()
         {
-            await new UserManager(signInManager).LogoutUser();
+            await userManager.LogoutUser();
             return RedirectToPage("/Index");
         }
     }

@@ -30,5 +30,11 @@ namespace ChalkboardMessenger.App.Services
             }
             return await repo.AddAsync(new MessageModel() { UserName = username, Message = message, Date = DateTime.UtcNow });
         }
+
+        public async Task UpdateUsernames(string oldUsername, string newUsername)
+        {
+            await repo.UpdateUsername(oldUsername, newUsername);
+            await repo.SaveChanges();
+        }
     }
 }

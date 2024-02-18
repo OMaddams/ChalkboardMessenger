@@ -25,6 +25,7 @@ builder.Services.AddAuthorization(options => options.AddPolicy("AdminPolicy", po
 builder.Services.AddScoped<IMessagesRepo, MessagesRepo>();
 
 builder.Services.AddScoped<MessagesManager>();
+builder.Services.AddScoped<UserManager>();
 
 builder.Services.AddRazorPages(options =>
 {

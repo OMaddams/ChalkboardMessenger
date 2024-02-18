@@ -20,5 +20,6 @@ namespace ChalkboardMessenger.Data.Repo
 
         public Task SaveChanges();
 
+        public Task UpdateUsername(string oldUsername, string newUsername);
     }
 }

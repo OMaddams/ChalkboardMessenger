@@ -8,19 +8,23 @@ namespace ChalkboardMessenger.UI.Pages.Member
     public class IndexModel : PageModel
     {
         private readonly MessagesManager messagesManager;
+        private readonly UserManager userManager;
+
         [BindProperty]
         public string? Message { get; set; }
         public List<MessageModel> Messages { get; set; } = new();
         public string? Error { get; set; } = null;
-        public IndexModel(MessagesManager messagesManager)
+        public bool IsAdmin { get; set; }
+        public IndexModel(MessagesManager messagesManager, UserManager userManager)
         {
             this.messagesManager = messagesManager;
-
+            this.userManager = userManager;
         }
         public async Task OnGet(string error)
         {
             Messages = await messagesManager.GetAllMessage();
             Error = error;
+            IsAdmin = await userManager.CheckAdmin(HttpContext);
         }
 
         public async Task<IActionResult> OnPost()

@@ -30,7 +30,7 @@
                     <h4 class="d-inline">Poster: @(@item.UserName == User.Identity.Name ? "You" : item.UserName)</h4>   
                     <form class="justify-content-end d-flex" asp-page-handler="remove" method="post">
                         <input type="hidden" name="cardId" value="@item.Id" />
-                        @if (item.UserName == User.Identity.Name)
+                        @if (item.UserName == User.Identity.Name || Model.IsAdmin)
                         {
                             <button class="btn btn-danger">X</button>
                         }
