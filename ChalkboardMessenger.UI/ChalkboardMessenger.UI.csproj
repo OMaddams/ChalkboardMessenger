@@ -25,4 +25,8 @@
     <ProjectReference Include="..\ChalkboardMessenger.App\ChalkboardMessenger.App.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Admin\" />
+  </ItemGroup>
+
 </Project>

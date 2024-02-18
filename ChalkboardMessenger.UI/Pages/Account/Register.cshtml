@@ -1,4 +1,35 @@
 ﻿@page
 @model ChalkboardMessenger.UI.Pages.Account.RegisterModel
+
 @{
 }
+
+<div class="row w-100 justify-content-center align-items-center" style="height:85vh">
+    <form class="d-flex flex-column col-4" asp-page-handler="ChangeUsername" method="post">
+        <div class="form-group m-3">
+            <div class="d-flex flex-column form">
+                <label for="newUsername"> <h4>Username</h4></label>
+                <input class="form-control" id="newUsername" type="text" asp-for="Username" />
+            </div>
+
+            <div class="d-flex flex-column">
+                <label for="Password"><h4> Password </h4></label>
+                <input class="form-control" id="Password" type="password" asp-for="Password" />
+            </div>
+            <div class="d-flex flex-column">
+                <label for="Password"><h4>Confirm Password</h4></label>
+                <input class="form-control" id="passwordRepeat" type="password" asp-for="PasswordRepeat" />
+            </div>
+        </div>
+
+
+        <button class="btn btn-primary m-3"><h4>Register</h4></button>
+    </form>
+</div>
+
+@* <form method="post">
+    <input type="text" asp-for="Username" />
+    <input type="password" asp-for="Password" />
+    <button>Register</button>
+
+</form> *@

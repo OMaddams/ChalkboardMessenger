@@ -1,0 +1,35 @@
+﻿@page
+@model ChalkboardMessenger.UI.Pages.Member.UserSettingsModel
+
+@{
+}
+
+    
+
+
+<div class="row w-100 justify-content-center align-items-center" style="height:85vh">
+
+    
+    
+    <form class="d-flex flex-column col-4" asp-page-handler="ChangeUsername" method="post">
+        <div class="form-group m-3">
+            <div class="d-flex flex-column form">
+                <label for="newUsername">New username</label>
+                <input class="form-control" id="newUsername" type="text" asp-for="NewUsername"/>
+            </div>
+            <div class="d-flex flex-column">
+                <label for="newPassword">New Password</label>
+                <input class="form-control" id="newPassword" type="password" asp-for="NewPassword" />
+            </div>
+            <div class="d-flex flex-column">
+                <label for="newPassword"> Password</label>
+                <input class="form-control" id="Password" type="password" asp-for="Password" />
+            </div>
+            <div class="w-100 @(!string.IsNullOrEmpty(Model.Error) ? "bg-danger" : "" )"><p class="text-center fs-5">@Model.Error</p></div>
+        </div>
+        
+
+        <button class="btn btn-primary m-3">Update</button>
+        <button asp-page-handler="Delete"  class="btn btn-danger m-3">Delete Account</button>
+    </form>
+</div>
