@@ -15,12 +15,12 @@ namespace ChalkboardMessenger.App.Services
             this.roleManager = roleManager;
             this.messagesManager = messagesManager;
         }
-        public async Task LogoutUser()
+        public async Task LogoutUserAsync()
         {
             await signInManager.SignOutAsync();
         }
 
-        public async Task<string> ChangePassword(string username, string newPassword, string oldPassword)
+        public async Task<string> ChangePasswordAsync(string username, string newPassword, string oldPassword)
         {
             var userToChange = await signInManager.UserManager.FindByNameAsync(username);
             if (userToChange == null)
@@ -41,7 +41,7 @@ namespace ChalkboardMessenger.App.Services
 
             return "Password needs to contain atleast 1 of each,  capital letter, number and symbol";
         }
-        public async Task<string> ChangeUsername(string username, string newUsername, string password)
+        public async Task<string> ChangeUsernameAsync(string username, string newUsername, string password)
         {
 
 
@@ -61,7 +61,7 @@ namespace ChalkboardMessenger.App.Services
 
             if (result.Succeeded)
             {
-                await messagesManager.UpdateUsernames(oldUsername, newUsername);
+                await messagesManager.UpdateUsernamesAsync(oldUsername, newUsername);
                 await signInManager.RefreshSignInAsync(userToChange);
                 return "";
             }
@@ -71,19 +71,19 @@ namespace ChalkboardMessenger.App.Services
 
         }
 
-        public async Task<bool> CheckAdmin(HttpContext httpContext)
+        public async Task<bool> CheckAdminAsync(HttpContext httpContext)
         {
             IdentityUser? loggedInUser = await signInManager.UserManager.GetUserAsync(httpContext.User);
             if (loggedInUser == null)
             { return false; }
-            await CreateAdminRole();
+            await CreateAdminRoleAsync();
             return await signInManager.UserManager.IsInRoleAsync(loggedInUser, "Admin");
 
 
 
 
         }
-        private async Task CreateAdminRole()
+        private async Task CreateAdminRoleAsync()
         {
             bool AdminRoleExists = await roleManager.RoleExistsAsync("Admin");
 
@@ -103,14 +103,14 @@ namespace ChalkboardMessenger.App.Services
             }
         }
 
-        public async Task DeleteUser(string user)
+        public async Task DeleteUserAsync(string user)
         {
             var result = await signInManager.UserManager.FindByNameAsync(user);
             if (result == null)
             {
                 return;
             }
-            await messagesManager.UpdateUsernames(result.UserName, "(Deleted)");
+            await messagesManager.UpdateUsernamesAsync(result.UserName, "(Deleted)");
             await signInManager.SignOutAsync();
             await signInManager.UserManager.DeleteAsync(result);
 

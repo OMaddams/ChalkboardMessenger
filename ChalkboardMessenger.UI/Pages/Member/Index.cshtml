@@ -27,7 +27,14 @@
         <div class="d-flex  flex-column col-6 ">
             <div class="mx-4 my-4 card ">
                 <div class="card-header d-flex justify-content-between text-center @(item.UserName == User.Identity.Name ? "bg-success text-white" : "")">
-                    <h4 class="d-inline">Poster: @(@item.UserName == User.Identity.Name ? "You" : item.UserName)</h4>   
+                    <form method="post" asp-page-handler="filter">
+                        <input type="hidden" name="user" value="@item.UserName" />
+                        <button class="bg-transparent btn" >
+                            
+                            <h4 class="d-inline"> @(@item.UserName == User.Identity.Name ? "You" : item.UserName)</h4>
+                        </button>
+
+                    </form>
                     <form class="justify-content-end d-flex" asp-page-handler="remove" method="post">
                         <input type="hidden" name="cardId" value="@item.Id" />
                         @if (item.UserName == User.Identity.Name || Model.IsAdmin)

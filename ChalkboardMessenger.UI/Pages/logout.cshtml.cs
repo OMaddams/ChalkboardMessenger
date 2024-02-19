@@ -17,7 +17,7 @@ namespace ChalkboardMessenger.UI.Pages
         }
         public async Task<IActionResult> OnGet()
         {
-            await userManager.LogoutUser();
+            await userManager.LogoutUserAsync();
             return RedirectToPage("/Index");
         }
     }

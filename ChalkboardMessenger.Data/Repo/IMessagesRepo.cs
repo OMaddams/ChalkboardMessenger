@@ -16,10 +16,10 @@ namespace ChalkboardMessenger.Data.Repo
 
         public Task<MessageModel> AddAsync(MessageModel modelToAdd);
 
-        public Task<string> Remove(int id);
+        public Task<string> RemoveAsync(int id);
 
-        public Task SaveChanges();
+        public Task SaveChangesAsync();
 
-        public Task UpdateUsername(string oldUsername, string newUsername);
+        public Task UpdateUsernameAsync(string oldUsername, string newUsername);
     }
 }

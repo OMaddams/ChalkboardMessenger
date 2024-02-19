@@ -15,22 +15,32 @@ namespace ChalkboardMessenger.UI.Pages.Member
         public List<MessageModel> Messages { get; set; } = new();
         public string? Error { get; set; } = null;
         public bool IsAdmin { get; set; }
+
         public IndexModel(MessagesManager messagesManager, UserManager userManager)
         {
             this.messagesManager = messagesManager;
             this.userManager = userManager;
         }
-        public async Task OnGet(string error)
+        public async Task OnGet(string error, string user)
         {
-            Messages = await messagesManager.GetAllMessage();
+            if (string.IsNullOrEmpty(user))
+            {
+                Messages = await messagesManager.GetAllMessageAsync();
+            }
+            else
+            {
+                Messages = await messagesManager.GetAllUsersMessagesAsync(user);
+            }
             Error = error;
-            IsAdmin = await userManager.CheckAdmin(HttpContext);
+            IsAdmin = await userManager.CheckAdminAsync(HttpContext);
         }
+
+
 
         public async Task<IActionResult> OnPost()
         {
             Error = null;
-            MessageModel? response = await messagesManager.AddMessage(User.Identity.Name, Message);
+            MessageModel? response = await messagesManager.AddMessageAsync(User.Identity.Name, Message);
             if (response == null)
             {
                 Error = "Cant post nothing";
@@ -43,6 +53,11 @@ namespace ChalkboardMessenger.UI.Pages.Member
 
 
 
+        }
+
+        public async Task<IActionResult> OnPostFilter(string user)
+        {
+            return RedirectToPage("/Member/Index", new { user });
         }
 
         public async Task<IActionResult> OnPostRemove(int cardId)
