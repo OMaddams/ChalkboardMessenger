@@ -16,6 +16,10 @@ namespace ChalkboardMessenger.App.Services
         {
             return await repo.GetAllAsync();
         }
+        public async Task<List<MessageModel>> GetAllUsersMessagesAsync(string username)
+        {
+            return await repo.GetAllByUserAsync(username);
+        }
         public async Task<string> RemoveMessage(int id)
         {
             return await repo.RemoveAsync(id);
