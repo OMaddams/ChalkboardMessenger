@@ -11,12 +11,14 @@ namespace ChalkboardMessenger.UI.Pages.Account
 
         public string Username { get; set; }
         public string Password { get; set; }
+        public string ErrorMessage { get; set; }
         public LoginModel(SignInManager<IdentityUser> signInManager)
         {
             this.signInManager = signInManager;
         }
-        public void OnGet()
+        public void OnGet(string errorMessage)
         {
+            ErrorMessage = errorMessage;
         }
         public async Task<IActionResult> OnPost()
         {
@@ -35,7 +37,7 @@ namespace ChalkboardMessenger.UI.Pages.Account
                 }
             }
 
-            return Page();
+            return RedirectToPage("/Account/Login", new { errorMessage = "Your credentials didn't match" });
         }
 
     }

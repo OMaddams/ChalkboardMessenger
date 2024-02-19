@@ -31,26 +31,26 @@ namespace ChalkboardMessenger.Data.Repo
         public async Task<MessageModel> AddAsync(MessageModel modelToAdd)
         {
             await context.Messages.AddAsync(modelToAdd);
-            await SaveChanges();
+            await SaveChangesAsync();
             return modelToAdd;
         }
 
-        public async Task UpdateUsername(string oldUsername, string newUsername)
+        public async Task UpdateUsernameAsync(string oldUsername, string newUsername)
         {
             await context.Messages.Where(m => m.UserName == oldUsername).ForEachAsync(m => m.UserName = newUsername);
         }
-        public async Task<string> Remove(int id)
+        public async Task<string> RemoveAsync(int id)
         {
             MessageModel? modelToRemove = await GetAsync(id);
             if (modelToRemove != null)
             {
                 context.Messages.Remove(modelToRemove);
-                await SaveChanges();
+                await SaveChangesAsync();
                 return "Removed successfully";
             }
             return "Could not find message";
         }
-        public async Task SaveChanges()
+        public async Task SaveChangesAsync()
         {
             await context.SaveChangesAsync();
         }

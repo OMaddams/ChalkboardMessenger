@@ -20,6 +20,8 @@
                 <label for="Password"><h4>Confirm Password</h4></label>
                 <input class="form-control" id="passwordRepeat" type="password" asp-for="PasswordRepeat" />
             </div>
+            <div class="w-100 @(!string.IsNullOrEmpty(Model.ErrorMessage) ? "bg-danger" : "" )"><p class="text-center fs-5">@Model.ErrorMessage</p></div>
+        
         </div>
 
 

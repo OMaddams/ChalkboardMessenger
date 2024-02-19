@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.UI\\ChalkboardMessenger.UI.csproj": {}
+    "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.UI\\ChalkboardMessenger.UI.csproj": {}
   },
   "projects": {
-    "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.App\\ChalkboardMessenger.App.csproj": {
+    "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.App\\ChalkboardMessenger.App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.App\\ChalkboardMessenger.App.csproj",
+        "projectUniqueName": "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.App\\ChalkboardMessenger.App.csproj",
         "projectName": "ChalkboardMessenger.App",
-        "projectPath": "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.App\\ChalkboardMessenger.App.csproj",
-        "packagesPath": "C:\\Users\\Sidewinder\\.nuget\\packages\\",
-        "outputPath": "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.App\\obj\\",
+        "projectPath": "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.App\\ChalkboardMessenger.App.csproj",
+        "packagesPath": "C:\\Users\\omadd\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.App\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Sidewinder\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\omadd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.Data\\ChalkboardMessenger.Data.csproj": {
-                "projectPath": "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.Data\\ChalkboardMessenger.Data.csproj"
+              "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.Data\\ChalkboardMessenger.Data.csproj": {
+                "projectPath": "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.Data\\ChalkboardMessenger.Data.csproj"
               }
             }
           }
@@ -93,21 +98,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.Data\\ChalkboardMessenger.Data.csproj": {
+    "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.Data\\ChalkboardMessenger.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.Data\\ChalkboardMessenger.Data.csproj",
+        "projectUniqueName": "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.Data\\ChalkboardMessenger.Data.csproj",
         "projectName": "ChalkboardMessenger.Data",
-        "projectPath": "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.Data\\ChalkboardMessenger.Data.csproj",
-        "packagesPath": "C:\\Users\\Sidewinder\\.nuget\\packages\\",
-        "outputPath": "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.Data\\obj\\",
+        "projectPath": "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.Data\\ChalkboardMessenger.Data.csproj",
+        "packagesPath": "C:\\Users\\omadd\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Sidewinder\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\omadd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -115,6 +124,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -178,21 +188,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.UI\\ChalkboardMessenger.UI.csproj": {
+    "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.UI\\ChalkboardMessenger.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.UI\\ChalkboardMessenger.UI.csproj",
+        "projectUniqueName": "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.UI\\ChalkboardMessenger.UI.csproj",
         "projectName": "ChalkboardMessenger.UI",
-        "projectPath": "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.UI\\ChalkboardMessenger.UI.csproj",
-        "packagesPath": "C:\\Users\\Sidewinder\\.nuget\\packages\\",
-        "outputPath": "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.UI\\obj\\",
+        "projectPath": "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.UI\\ChalkboardMessenger.UI.csproj",
+        "packagesPath": "C:\\Users\\omadd\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.UI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Sidewinder\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\omadd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -200,14 +214,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.App\\ChalkboardMessenger.App.csproj": {
-                "projectPath": "G:\\Personal-Projects\\ChalkboardMessenger\\ChalkboardMessenger.App\\ChalkboardMessenger.App.csproj"
+              "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.App\\ChalkboardMessenger.App.csproj": {
+                "projectPath": "C:\\Users\\omadd\\OneDrive\\Desktop\\desk\\Own-stuff\\ChalkboardMessenger\\ChalkboardMessenger.App\\ChalkboardMessenger.App.csproj"
               }
             }
           }
@@ -270,7 +285,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

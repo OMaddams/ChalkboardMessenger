@@ -12,17 +12,17 @@ namespace ChalkboardMessenger.App.Services
             this.repo = repo;
         }
 
-        public async Task<List<MessageModel>> GetAllMessage()
+        public async Task<List<MessageModel>> GetAllMessageAsync()
         {
             return await repo.GetAllAsync();
         }
         public async Task<string> RemoveMessage(int id)
         {
-            return await repo.Remove(id);
+            return await repo.RemoveAsync(id);
 
         }
 
-        public async Task<MessageModel?> AddMessage(string? username, string? message)
+        public async Task<MessageModel?> AddMessageAsync(string? username, string? message)
         {
             if (username == null || message == null)
             {
@@ -31,10 +31,10 @@ namespace ChalkboardMessenger.App.Services
             return await repo.AddAsync(new MessageModel() { UserName = username, Message = message, Date = DateTime.UtcNow });
         }
 
-        public async Task UpdateUsernames(string oldUsername, string newUsername)
+        public async Task UpdateUsernamesAsync(string oldUsername, string newUsername)
         {
-            await repo.UpdateUsername(oldUsername, newUsername);
-            await repo.SaveChanges();
+            await repo.UpdateUsernameAsync(oldUsername, newUsername);
+            await repo.SaveChangesAsync();
         }
     }
 }

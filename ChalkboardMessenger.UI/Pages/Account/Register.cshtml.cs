@@ -16,8 +16,10 @@ namespace ChalkboardMessenger.UI.Pages.Account
         public string Username { get; set; }
         public string PasswordRepeat { get; set; }
         public string Password { get; set; }
-        public void OnGet()
+        public string ErrorMessage { get; set; }
+        public void OnGet(string errorMessage)
         {
+            ErrorMessage = errorMessage;
         }
         public async Task<IActionResult> OnPost()
         {
@@ -31,28 +33,35 @@ namespace ChalkboardMessenger.UI.Pages.Account
                 UserName = Username,
             };
 
-            var createUserResult = await signInManager.UserManager.CreateAsync(newUser, Password);
-
-            if (createUserResult.Succeeded)
+            try
             {
-
-                IdentityUser? userToLogIn = await signInManager.UserManager.FindByNameAsync(Username);
-
-                var signInResult = await signInManager.PasswordSignInAsync(userToLogIn, Password, false, false);
-
-                if (signInResult.Succeeded)
+                var createUserResult = await signInManager.UserManager.CreateAsync(newUser, Password);
+                if (createUserResult.Succeeded)
                 {
-                    return RedirectToPage("/Member/Index");
+
+                    IdentityUser? userToLogIn = await signInManager.UserManager.FindByNameAsync(Username);
+
+                    var signInResult = await signInManager.PasswordSignInAsync(userToLogIn, Password, false, false);
+
+                    if (signInResult.Succeeded)
+                    {
+                        return RedirectToPage("/Member/Index");
+                    }
+
+
+
                 }
 
-
-
+                return RedirectToPage("/Account/Register", new { errorMessage = "Could not create account, already existing username or Invalid password" });
             }
-            else
+            catch (Exception ex)
             {
-
+                return RedirectToPage("/Account/Register", new { errorMessage = "Could not create account, already existing username or Invalid password" });
             }
-            return Page();
+
+
+
+
             //signInManager.UserManager.GetUserAsync(HttpContext.User)
         }
 

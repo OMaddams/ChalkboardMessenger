@@ -22,15 +22,15 @@ namespace ChalkboardMessenger.UI.Pages.Member
         }
         public async Task OnGet(string error)
         {
-            Messages = await messagesManager.GetAllMessage();
+            Messages = await messagesManager.GetAllMessageAsync();
             Error = error;
-            IsAdmin = await userManager.CheckAdmin(HttpContext);
+            IsAdmin = await userManager.CheckAdminAsync(HttpContext);
         }
 
         public async Task<IActionResult> OnPost()
         {
             Error = null;
-            MessageModel? response = await messagesManager.AddMessage(User.Identity.Name, Message);
+            MessageModel? response = await messagesManager.AddMessageAsync(User.Identity.Name, Message);
             if (response == null)
             {
                 Error = "Cant post nothing";

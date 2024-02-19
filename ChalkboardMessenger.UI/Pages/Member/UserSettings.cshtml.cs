@@ -33,7 +33,7 @@ namespace ChalkboardMessenger.UI.Pages.Member
             bool changedPassword = false;
             if (!string.IsNullOrEmpty(NewPassword))
             {
-                Error = await userManager.ChangePassword(User.Identity.Name, NewPassword, Password);
+                Error = await userManager.ChangePasswordAsync(User.Identity.Name, NewPassword, Password);
 
                 if (!string.IsNullOrEmpty(Error))
                 {
@@ -46,7 +46,7 @@ namespace ChalkboardMessenger.UI.Pages.Member
             {
                 if (!string.IsNullOrEmpty(NewUsername.Trim()))
                 {
-                    Error = await userManager.ChangeUsername(User.Identity.Name, NewUsername, changedPassword ? NewPassword : Password);
+                    Error = await userManager.ChangeUsernameAsync(User.Identity.Name, NewUsername, changedPassword ? NewPassword : Password);
 
                     if (!string.IsNullOrEmpty(Error))
                     {
@@ -61,7 +61,7 @@ namespace ChalkboardMessenger.UI.Pages.Member
 
         public async Task<IActionResult> OnPostDelete()
         {
-            await userManager.DeleteUser(User.Identity.Name);
+            await userManager.DeleteUserAsync(User.Identity.Name);
             return RedirectToPage("/Index");
         }
     }
